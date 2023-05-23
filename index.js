@@ -3,7 +3,7 @@ const kubitdb = require("kubitdb")
 const db = new kubitdb("data")
 const express = require("express")
 const app = express();
-app.listen(process.env.PORT || 80);
+app.listen(3000);
 app.get('/', function (req, res) {res.send('Uptimer')})
 console.log("Uptime ready")
 var time = 0
@@ -30,4 +30,4 @@ db.set("time",db.get("time").filter((z)=> z.url != req.params.user))
 db.push("time",{url:req.params.user, time:Date.now()+Number(req.params.time)})
 res.end()
 });
-//example: http://localhost/time/example.com/50000
+//example: http://localhost:3000/time/example.com/50000
