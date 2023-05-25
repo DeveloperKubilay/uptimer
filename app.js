@@ -33,7 +33,7 @@ res.end()
 app.get("/db", function(req, res) {
 var text = ""
 db.get("uptime").map(x =>text +="<a href='https://"+x+"'>"+x+"</a><br>")
-db.get("time").map(x =>text +="<a href='https://"+x+"'>"+x+"</a><br>")
+db.get("time").map(x =>text +=`<a href='https://${x.url}'>${x.url} ${x.time}</a><br>`)
 res.send(text)
 })
 //example: http://localhost:3000/time/example.com/50000
