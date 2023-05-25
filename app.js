@@ -3,7 +3,7 @@ const kubitdb = require("kubitdb")
 const db = new kubitdb("data")
 const express = require("express")
 const app = express();
-app.listen(process.env.PORT || 3001);
+app.listen(process.env.PORT || 3000);
 app.get('/', function (req, res) {res.send('Uptimer')})
 console.log("Uptime ready")
 var time = 0
